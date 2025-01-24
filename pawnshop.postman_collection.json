@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "2fc246fb-9350-4e82-a3a9-6faeff3e5070",
+		"name": "pawnshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6639955"
+	},
+	"item": [
+		{
+			"name": "pawnshop",
+			"item": [
+				{
+					"name": "{{url}}/products/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{uri}}/products/",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/products/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"The Davinci Code\",\n  \"description\": \"Dan Brown\",\n  \"price\": \"13.2\",\n  \"stock\": 2\n}"
+						},
+						"url": {
+							"raw": "{{uri}}/products/",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/products/",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"The Davinci Code\",\n  \"description\": \"Dan Brown\",\n  \"price\": \"13.2\",\n  \"stock\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/products/40c0290a-5dfb-4a34-a38b-cedb5ea67e98/",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"products",
+								"40c0290a-5dfb-4a34-a38b-cedb5ea67e98",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/products/",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"stock\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/products/40c0290a-5dfb-4a34-a38b-cedb5ea67e98/",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"products",
+								"40c0290a-5dfb-4a34-a38b-cedb5ea67e98",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/products/",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{uri}}/products/c2c6c828-9212-415d-98cd-9f305a65a9d7/",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"products",
+								"c2c6c828-9212-415d-98cd-9f305a65a9d7",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
