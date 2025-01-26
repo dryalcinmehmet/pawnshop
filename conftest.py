@@ -17,6 +17,7 @@ def api_client():
 
     return APIClient()
 
+
 @pytest.fixture
 def admin_user_obj():
     user_obj = User.objects.create_user(
@@ -30,7 +31,6 @@ def admin_user_obj():
         is_superuser=True,
     )
     return user_obj
-
 
 
 @pytest.mark.django_db()
@@ -53,9 +53,7 @@ def product_obj(
     price: str = "13.2",
     stock: int = 10,
 ) -> Product:
-    return create_product(
-        name=name, description=description, price=price, stock=stock
-    )
+    return create_product(name=name, description=description, price=price, stock=stock)
 
 
 @pytest.fixture

@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class ConcurrentsafedeleteConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'concurrentsafedelete'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "concurrentsafedelete"

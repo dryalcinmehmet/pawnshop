@@ -7,7 +7,12 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from rules.contrib.models import RulesModelBase, RulesModelMixin
 from safedelete.models import SOFT_DELETE_CASCADE
-from products.rules import can_add_product, can_view_product, can_update_product, can_delete_product
+from products.rules import (
+    can_add_product,
+    can_view_product,
+    can_update_product,
+    can_delete_product,
+)
 
 
 class Product(RulesModelMixin, ConcurrentSafeDeleteModel, metaclass=RulesModelBase):
@@ -42,10 +47,10 @@ class Product(RulesModelMixin, ConcurrentSafeDeleteModel, metaclass=RulesModelBa
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-    def delete(self, force_policy=None, **kwargs): 
+    def delete(self, force_policy=None, **kwargs):
         result = super().delete(force_policy=force_policy, **kwargs)
         return result
 
-    def undelete(self, force_policy=None, **kwargs): 
+    def undelete(self, force_policy=None, **kwargs):
         result = super().undelete(force_policy=force_policy, **kwargs)
         return result

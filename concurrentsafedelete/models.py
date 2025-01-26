@@ -109,5 +109,5 @@ class ConcurrentSafeDeleteModel(SafeDeleteModel):
 
             # soft-delete the object
             self.delete(force_policy=SOFT_DELETE, **kwargs)
-                    
+
         return self, None  # Eklenen dönüş

@@ -7,9 +7,8 @@ from rest_framework import serializers
 class ProductSerializer(serializers.ModelSerializer):
     name = serializers.CharField(required=True)
     description = serializers.CharField(required=True)
-    price = serializers.DecimalField(max_digits=5,decimal_places=1)
+    price = serializers.DecimalField(max_digits=5, decimal_places=1)
     stock = serializers.IntegerField(required=True)
-
 
     def validate(self, data):
         """
@@ -42,9 +41,7 @@ class ProductSerializer(serializers.ModelSerializer):
         ]
 
 
-
 class ProductDeleteSerializer(serializers.ModelSerializer):
-
 
     def validate(self, data):
         """
@@ -61,13 +58,11 @@ class ProductDeleteSerializer(serializers.ModelSerializer):
         ]
 
 
-
 class ProductListOrDetailSerializer(serializers.ModelSerializer):
     name = serializers.CharField(required=True)
     description = serializers.CharField(required=True)
-    price = serializers.DecimalField(max_digits=5,decimal_places=1)
+    price = serializers.DecimalField(max_digits=5, decimal_places=1)
     stock = serializers.IntegerField(required=True)
-
 
     def validate(self, data):
         """
@@ -102,9 +97,8 @@ class ProductListOrDetailSerializer(serializers.ModelSerializer):
 class ProductCreateSerializer(serializers.ModelSerializer):
     name = serializers.CharField(required=True)
     description = serializers.CharField(required=True)
-    price = serializers.DecimalField(max_digits=5,decimal_places=1)
+    price = serializers.DecimalField(max_digits=5, decimal_places=1)
     stock = serializers.IntegerField(required=True)
-
 
     def validate(self, data):
         """
@@ -131,12 +125,12 @@ class ProductCreateSerializer(serializers.ModelSerializer):
             "updated_at",
         ]
 
+
 class ProductUpdateSerializer(serializers.ModelSerializer):
     name = serializers.CharField(required=True)
     description = serializers.CharField(required=True)
-    price = serializers.DecimalField(max_digits=5,decimal_places=1)
+    price = serializers.DecimalField(max_digits=5, decimal_places=1)
     stock = serializers.IntegerField(required=True)
-
 
     def validate(self, data):
         """

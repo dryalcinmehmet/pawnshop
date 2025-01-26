@@ -1,4 +1,3 @@
-
 from django.utils.translation import gettext_lazy as _
 from django_auto_prefetching import AutoPrefetchViewSetMixin
 from django_filters.rest_framework import DjangoFilterBackend
@@ -11,8 +10,14 @@ from rules.contrib.rest_framework import AutoPermissionViewSetMixin
 from products.filters import ProductFilter
 from products.models import Product
 from products.paginations import GeneralPaginations
-from products.serializers import (ProductCreateSerializer, ProductListOrDetailSerializer,
-                              ProductSerializer, ProductUpdateSerializer, ProductDeleteSerializer)
+from products.serializers import (
+    ProductCreateSerializer,
+    ProductListOrDetailSerializer,
+    ProductSerializer,
+    ProductUpdateSerializer,
+    ProductDeleteSerializer,
+)
+
 
 class ProductViewSet(
     AutoPermissionViewSetMixin, AutoPrefetchViewSetMixin, viewsets.ModelViewSet
