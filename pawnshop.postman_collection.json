@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "2fc246fb-9350-4e82-a3a9-6faeff3e5070",
+		"_postman_id": "2d27738c-9a7e-4372-a8dc-a8cf979ab993",
 		"name": "pawnshop",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "6639955"
+		"_exporter_id": "6639955",
+		"_collection_link": "https://winter-escape-142055.postman.co/workspace/Medium~01f2394d-6daa-43e5-b722-d02bc60c7104/collection/6639955-2d27738c-9a7e-4372-a8dc-a8cf979ab993?action=share&source=collection_link&creator=6639955"
 	},
 	"item": [
 		{
@@ -52,11 +53,31 @@
 				{
 					"name": "{{url}}/products/",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"The Davinci Code\",\n  \"description\": \"Dan Brown\",\n  \"price\": \"13.2\",\n  \"stock\": 2\n}"
+							"raw": "{\n  \"name\": \"The Davinci Code\",\n  \"description\": \"Dan Brown\",\n  \"price\": \"13.2\",\n  \"stock\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{uri}}/products/",
@@ -166,6 +187,164 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "jwtauth",
+			"item": [
+				{
+					"name": "{{url}}/jwtauth/login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"user2@test.com\",\n    \"password\":\"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/jwtauth/login/",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"jwtauth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/jwtauth/register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"user2@test.com\",\n    \"password\":\"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/jwtauth/register/",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"jwtauth",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/jwtauth/change-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"user2@test.com\",\n    \"password\":\"test2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/jwtauth/change-password/",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"jwtauth",
+								"change-password",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/jwtauth/forgot-password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"user2@test.com\",\n    \"password\":\"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/jwtauth/forgot-password/",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"jwtauth",
+								"forgot-password",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4MjcwNzE3LCJpYXQiOjE3MzgyNzA0MTcsImp0aSI6IjJjNWI5NDVmNjhmZTQ0NzBiYWIzMmM5OWRhYjNkM2E0IiwidXNlcl9pZCI6NSwiZW1haWwiOiJ1c2VyMkB0ZXN0LmNvbSJ9.Th8Db7K2SsZLmvgbQI5mc0NuwpBJhsJl1BI-iTjCFZ4",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }

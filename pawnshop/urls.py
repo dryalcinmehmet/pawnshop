@@ -47,4 +47,7 @@ urlpatterns = [
         name="redoc",
     ),
     path("products/", include("products.urls")),
+    path("jwtauth/", include("jwtauth.urls")),
+
+
 ]

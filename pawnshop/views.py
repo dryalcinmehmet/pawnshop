@@ -1,8 +1,9 @@
-from django.contrib.auth.models import Group, User
+from django.contrib.auth.models import Group
 from rest_framework import permissions, viewsets
 
 from pawnshop.serializers import GroupSerializer, UserSerializer
 
+from users.models import User
 
 class UserViewSet(viewsets.ModelViewSet):
     """
