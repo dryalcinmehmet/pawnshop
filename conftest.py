@@ -4,10 +4,9 @@ from datetime import datetime
 
 import pytest
 from django.apps import apps
-from django.contrib.auth import get_user_model
+from users.models import User
 from django.core.files.uploadedfile import SimpleUploadedFile
 
-User = get_user_model()
 Product = apps.get_model("products", "Product")
 
 
@@ -21,8 +20,7 @@ def api_client():
 @pytest.fixture
 def admin_user_obj():
     user_obj = User.objects.create_user(
-        username="admin",
-        email="admin_user@aractakasi.com",
+        email="admin@admin.com"
         password="admin",
         first_name="Admin",
         last_name="Admin",

@@ -4,9 +4,7 @@ import pytest
 from products.models import Product
 from rest_framework.reverse import reverse
 from rest_framework.test import APIClient
-from django.contrib.auth import get_user_model
-
-User = get_user_model()
+from users.models import User
 ######################################################
 """            Product  View Tests.                 """
 

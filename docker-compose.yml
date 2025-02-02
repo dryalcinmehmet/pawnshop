@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  web:
+    restart: always
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./pawnshop/pawnshop:/usr/src/app/pawnshop/pawnshop
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.docker
+    depends_on:
+      - db
+    networks:
+      - common_network
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - postgres_data_staging:/var/lib/postgresql/data/
+    env_file:
+      - .env.docker.db
+    networks:
+      - common_network
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+volumes:
+  postgres_data_staging:
+
+networks:
+  common_network:
+    external:
+      name: custom_net
