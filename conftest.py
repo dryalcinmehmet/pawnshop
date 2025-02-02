@@ -20,7 +20,7 @@ def api_client():
 @pytest.fixture
 def admin_user_obj():
     user_obj = User.objects.create_user(
-        email="admin@admin.com"
+        email="admin@admin.com",
         password="admin",
         first_name="Admin",
         last_name="Admin",
